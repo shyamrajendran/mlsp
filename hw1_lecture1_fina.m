@@ -1,8 +1,8 @@
 
-function hw1_backup()
+function hw1_lecture1_fina()
 my_image = uint8(imread('shyam.jpg'));
 figure,imshow(my_image);
-image_resized = double(imresize(my_image,[50 50]));
+image_resized = double(imresize(my_image,[100 100]));
 figure,imshow(uint8(image_resized));
 
 
