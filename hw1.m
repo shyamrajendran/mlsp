@@ -7,8 +7,8 @@ image_resized = double(imresize(my_image,.3));
 % image_resized = my_image;
 % imshow(image_resized);
 [H,V,P] = size(image_resized)
-HH = gen2(H);
-VV = gen(V);
+HH = gen2(H,1);
+VV = gen(V,1);
 diagI = diag([1,0,1]);
 % kronValue = kron(kron(diagI,eye(H)),eye(V));
 

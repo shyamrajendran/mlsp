@@ -7,10 +7,10 @@ figure,imshow(uint8(image_resized));
 
 
 [H,V,P] = size(image_resized);
-HH = gen2(H);
+HH = gen2(H,1);
 title('hh');
 figure,imshow(HH);
-VV = gen(V);
+VV = gen(V,1);
 figure,imshow(VV);
 diagI = diag([1,0,1]);
 

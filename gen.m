@@ -1,4 +1,4 @@
-function I = gen(s)
+function I = gen(s, v)
 I = zeros(s);
 i = uint8(s/2);
 for m = 1:s
@@ -9,7 +9,7 @@ for m = 1:s
 %             if (i==s)
 %                 I(m,1) = 1;
 %             end    
-            I(m,n) = 1;
+            I(m,n) = v;
         end     
     end
     i = i+1;
