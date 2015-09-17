@@ -11,15 +11,15 @@ y = log(linspace(1, 12000,5));
 
 
 FigHandle = figure;
-  set(FigHandle, 'Position', [50, 50, 1000, 800]);
+set(FigHandle, 'Position', [50, 50, 1000, 800]);
 subplot(3,1,1)
 imagesc([1 6],y, imcomplement(output)), colormap gray;
-    view(0,90);
-    axis xy; axis tight;
-    xlabel('Time');
-    ylabel('Frequency Hz');
-    str = sprintf('Spectrogram for input with WindowSize = %d ',windowSize);
-    title(str);
+view(0,90);
+axis xy; axis tight;
+xlabel('Time');
+ylabel('Frequency Hz');
+str = sprintf('Spectrogram for input with WindowSize = %d ',windowSize);
+title(str);
 
 
 sizeSample = size(samples);
@@ -31,8 +31,8 @@ for i = 1:downSampleRate:sizeSample;
     ovector(j,1) = samples(i,1);
     j = j+1;
 end
-sizeSample
-size(ovector)
+sizeSample;
+size(ovector);
 
 increments = size(ovector)/windowSize;
 x = 1:increments:size(ovector);
@@ -47,9 +47,6 @@ ylabel('Frequency Hz');
 str = sprintf('Spectogram  aliasing seen for WindowSize = %d with M = 8',windowSize);
 title(str);
    
-
-%     spectrogram(ovector, 512);
-
 
 %%%%%%%%%%%%%%%%%
 %%%% passing into low pass filter

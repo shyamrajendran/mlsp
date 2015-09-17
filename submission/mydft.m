@@ -1,5 +1,5 @@
 function [output] = mydft(n) 
-output = zeros(n)
+output = zeros(n);
 sqrtn = sqrt(n);
 v = 2*pi/n;
 for j = 0:n-1
