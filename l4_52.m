@@ -29,11 +29,14 @@ f2 = rot90(f1,1);
 f3 = imrotate(f1, 45);
 f4 = imrotate(f1, -45);
 
-o1=conv2(double(f1), double(image),'same');
-o2=conv2(double(f2), double(image),'same');
-o3=conv2(double(f3), double(image),'same');
-o4=conv2(double(f4), double(image),'same');
+o1=conv2(f1, image,'full');
+o2=conv2(f2, image,'full');
+o3=conv2(f3, image,'full');
+o4=conv2(f4, image,'full');
+
+
 figure,imagesc(f1);
+figure,imagesc(o1);
 figure,imagesc(f2);
 figure,imagesc(f3);
 figure,imagesc(f4);
@@ -41,9 +44,6 @@ figure,imagesc(o1);
 figure,imagesc(o2);
 figure,imagesc(o3);
 figure,imagesc(o4);
-
-
-
 
 
 end

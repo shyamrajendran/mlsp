@@ -10,14 +10,17 @@ for m = 1:windowSize:sampleCount
     if ( (m+windowSize) > sampleCount )
         break;
     end 
+    
+    
     for n = 1:windowSize;
         windowMatrix(1,i) = samples(m+n);
         i = i+1;
     end
     
     %calculate fft of this windowmatrix(:)
-    fftv = log10(abs(fft(windowMatrix(:))));
-    output = horzcat(output, fftv);
+    fftv = log10(abs(fft(windowMatrix(:))) + 1) ;
+    output = horzcat(output, fftv(1:windowSize/2));
+%     output = horzcat(output, fftv);
 end
 output;
 end 
