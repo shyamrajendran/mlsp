@@ -91,8 +91,10 @@ imagesc(out4)
 title('out4');
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%    out1
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%    out1 TODO
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ratio = 0.4;
 f = noise(7,ratio);
@@ -110,8 +112,8 @@ subplot(2,6,1)
 imagesc(image);
 subplot(2,6,2)
 imagesc(imcomplement(f)),colormap gray
-subplot(2,6,3)
-imagesc(out1)
+% subplot(2,6,3)
+% imagesc(out2)
 
 title('out1');
 
