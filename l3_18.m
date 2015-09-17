@@ -14,7 +14,6 @@ for windowSize = list
     ylabel('Frequency Hz');
     str = sprintf('Spectrogram for WindowSize = %d ',windowSize);
     title(str);
-    title(str);
 end
 
 end

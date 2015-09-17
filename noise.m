@@ -1,6 +1,6 @@
-function output = noise(x,ratio)
-output = zeros(x)
-scale = 0.02
+function [output] = noise(x,ratio)
+output = zeros(x);
+scale = 0.02;
 xx = (x+1)/2;
 index = 2;
 for i = 1:xx
@@ -11,7 +11,7 @@ for i = 1:xx
             continue;
         else
             if (j<=4 && i<=4)
-                output(i,j) = (ratio+i+k) * scale;
+                output(i,j) = (ratio+i+k) * scale / 3500;
             else  
             end
         end
