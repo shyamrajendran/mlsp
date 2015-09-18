@@ -8,8 +8,8 @@ filter = fir1(order, 0.8, 'high');
 samplesFiltered = conv(filter, samples);
 size(samplesFiltered);
 
-FigHandle = figure;
-  set(FigHandle, 'Position', [50, 50, 2000, 1000]);
+FigHandle = figure('name','lecture 3 - 39','numbertitle','off');
+set(FigHandle, 'Position', [50, 50, 2000, 1000]);
 
 filter = fir1(order, 0.9, 'low');
 samplesFiltered = conv(filter, samples);

@@ -8,7 +8,7 @@ image = imread('46.jpg');
 R = image(:,:,1);
 G = image(:,:,2);
 B = image(:,:,3);
-FigHandle = figure;
+FigHandle = figure('name','lecture 3 - 46','numbertitle','off');
 set(FigHandle, 'Position', [50, 50, 1800, 500]);
 
 %% for output1

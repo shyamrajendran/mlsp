@@ -13,7 +13,7 @@ x = 1:increments:size(samples);
 y = log(linspace(1, 12000,5));
 
 
-FigHandle = figure;
+FigHandle = figure('name','lecture 3 - 49','numbertitle','off');
 set(FigHandle, 'Position', [50, 50, 1000, 800]);
 subplot(3,1,1)
 % imagesc([1 6],y, imcomplement(output)), colormap gray;

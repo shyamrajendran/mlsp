@@ -1,7 +1,7 @@
 
 function l1_47()
 my_image = uint8(imread('shyam.jpg'));
-figure
+FigHandle = figure('name','lecture 1 - 47','numbertitle','off');
 subplot(2,2,1);
 imshow(my_image);
 title('input');

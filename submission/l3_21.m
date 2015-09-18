@@ -6,7 +6,7 @@ o1 = sin(3*X);
 o2 = sin(5*Y);
 o3 = sin(3*(X+Y));
 o4 = sin(3*(X+Y)) + sin(6*X + 8*Y);
-FigHandle = figure;
+FigHandle = figure('name','lecture 3 - 21','numbertitle','off');
 set(FigHandle, 'Position', [50, 50, 2000, 1000]);
 
 subplot(2,4,1)

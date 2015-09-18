@@ -9,7 +9,7 @@ for i = 15:35
         input(i,j) = 1;
     end
 end
-FigHandle = figure('name','lecture 4 -50','numbertitle','off');
+FigHandle = figure('name','Lecture 4 - 50','numbertitle','off');
 set(FigHandle, 'Position', [50, 50, 500, 500]);
 subplot(2,2,3)
 imshow(input),colormap gray

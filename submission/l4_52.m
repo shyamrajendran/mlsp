@@ -2,8 +2,8 @@ function l4_52()
 image = imread('52.png');
 [H,V,P] = size(image)
 % image = imresize(image,0.5);
-FigHandle = figure;
-  set(FigHandle, 'Position', [50, 50, 1200, 600]);
+FigHandle = figure('name','lecture 4 - 52','numbertitle','off');
+set(FigHandle, 'Position', [50, 50, 1200, 600]);
 
 f = zeros(200,200);
 
