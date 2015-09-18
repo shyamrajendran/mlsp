@@ -60,7 +60,7 @@ for windowSize = list
     axis xy; axis tight;
     xlabel('Time (sec)');
     ylabel('Frequency (Hz)');
-    str = sprintf('Spectogram function outout for WindowSize = %d ',windowSize);
+    str = sprintf('Window, N = %d ',windowSize);
     title(str);
     i = i + 1;
 end
