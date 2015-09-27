@@ -41,14 +41,14 @@ for i = 80:90
         in(i,j) = 1;
     end
 end
-imagesc(imcomplement(in)),colormap gray
+imagesc(imcomplement(in)),colormap gray;
 axis xy
 
 %% NMF
 errorrate = 1e-5;
 X = double(in);
-H = rand(2,200);
-W = rand(100, 2);
+H = rand(2,200)+10;
+W = rand(100, 2)+10;
 N = 500;
 [output,W,H,N] = nmf_helper(X,W,H,N,errorrate);
 figure

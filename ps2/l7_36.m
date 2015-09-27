@@ -37,9 +37,15 @@ X1 = Z(1,:);
 Y1 = Z(2,:);
 Z1 = Z(3,:);
 size(Z1)
+FigHandle = figure('name','lecture 5 - 25','numbertitle','off');
+set(FigHandle, 'Position', [50, 50, 1000, 400]);
+subplot(1,2,1)
+imagesc(in);colormap gray;
+
 % scatter3(X1,Y1,Z1);
 % figure,
 % labels = rand(18);
+subplot(1,2,2)
 plot3(Y1,Z1,X1,'ro');
 % celldata = cellstr(labels)
 % text(X1,Y1,Z1,labels)

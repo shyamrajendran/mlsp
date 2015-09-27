@@ -10,7 +10,6 @@ for i = 1:V
 end
 
 
-
 cov_x = cov(X.');
 [U,S,V] = svd(cov_x);
 
