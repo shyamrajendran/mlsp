@@ -5,6 +5,6 @@ e = abs(error1-error2);
 if (abs(e) <= errorrate) 
     conv = 1;
 else
-    conv = 0
+    conv = 0;
 end
 end

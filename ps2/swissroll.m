@@ -34,7 +34,7 @@ clf; colordef none; colormap jet; set(gcf,'Position',[200,400,620,200]);
   axis([-15,20,0,32,-15,15]); drawnow;
 
 % RUN LLE ALGORITHM
-Y=lle(X,K,d);
+   Y=lle(X,K,d);
 
 % SCATTERPLOT OF EMBEDDING
   subplot(1,3,3); cla;

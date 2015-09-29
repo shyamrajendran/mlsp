@@ -1,6 +1,6 @@
 
 % function [o] = generate_swissroll(N, data)
-N = 1000;
+N = 1e3;
 t = rand(1,N);
 t = sort(4*pi*sqrt(t))'; 
 z = 8*pi*rand(N,1); % random heights
@@ -25,14 +25,16 @@ for i = 1:N
         W(i,j) = e;    
     end
 end
-imagesc(W);colormap gray;
+figure,imagesc(W);colormap gray;
 tw = zeros(N);
+
+neighbours = 25;
 for i = 1:N
     [sort_data, sort_index] = sort(W(i,:),'descend');
-    max_index1 = sort_index(1,2);
-    max_index2 = sort_index(1,3);
-    tw(i,max_index1) = sort_data(1,2);
-    tw(i,max_index2) = sort_data(1,3);
+    for j = 2:neighbours
+        max_index = sort_index(1,j);
+        tw(i,max_index) = sort_data(1,j);
+    end
 end
 figure,
 imagesc(tw);
@@ -47,10 +49,8 @@ for i = 1:N
         rs(1,i) = rs(1,i).^(-0.5);
     end
 end
-
 D1 = diag(rs);
 Lchandra = (D1*L*D1);
 figure,imagesc(Lchandra);
-[v,d] = eigs(Lchandra);
-
-% end
+[U,S,V] = svd(Lchandra);
+figure,scatter(U(:,N-1),U(:,N-2),20,cmap)
