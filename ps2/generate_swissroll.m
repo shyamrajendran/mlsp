@@ -15,6 +15,8 @@ title('Original data');
 
 W = zeros(N);
 sigma = 100;
+
+% finding the distance between points
 for i = 1:N
     for j = 1:N
         d1 = (x(i)-x(j)).^2;
