@@ -1,17 +1,26 @@
+
 load faces.mat;
 
-FigHandle = figure('name','lecture 5 - 25','numbertitle','off');
-set(FigHandle, 'Position', [50, 50, 1000, 500]);
-
-[M,N] = size(X);
+[H,V] = size(X);
+INPUT = X;
 
 
-%taking pca
+%% taking mean face reduction
+mean_face_vector = sum(X,2) / V;
+mean_face = reshape(mean_face_vector,M,N);
+% figure,imagesc(mean_face),colormap(bone);
+for i = 1:V
+    X(:,i) = X(:,i) - mean_face_vector;
+end
+
+%% Taking PCA
 cov_x = cov(X.');
 [U,S,V] = svd(cov_x);
-size(U);
 PCA_eigen = U;
 
+
+%%
+%plotting EigenFaces
 for i = 1:16
     subplot(4,4,i);
     img = reshape(PCA_eigen(:,i),30,26);
@@ -19,34 +28,25 @@ for i = 1:16
 end
 
 
-W = U(:,1:16).';
-Z = W*X;
-X = Z;
-W = rand(16);
+%% Taking only 16 dimensions
+ICA_INPUT = U(:,1:16).'*X;
+%% computing ICA
+W = randn(16);
 D = eye(16);
-
-alpha = 1e-16;
+learningRate = 1e-16;
 delta = 0.00001;
-for i = 1:1000000
-    disp(i);
-    y = W*X;
-    old = W;
-    fy = y.^3;
-    dW = (D*N - fy*(y.')) * W/N;
-    W = W + alpha * dW;
-    new = W;
-    if(converge(old, new, delta))
-        disp('convered');
-        break;
-    end    
-end
-op = U(:,1:16)*W;
+N = 1000;
+
+W = helperICA(learningRate, delta, W, ICA_INPUT, D, N);
+
+op = W * ICA_INPUT;
+op = X(:,1:16)*op;
 size(op)
 figure
 for i = 1:16
    subplot(4,4,i);
    img = reshape(op(:,i),30,26);
-   imagesc(img),colormap(bone);axis off;
+   imagesc(img+mean_face),colormap(bone);axis off;
 end
 
 

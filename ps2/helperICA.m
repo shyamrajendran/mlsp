@@ -1,14 +1,15 @@
 function [W] = helperICA(learningRate, delta, W, X, D, N)
-for i = 1:1000000
+C = size(W*X,2);
+for i = 1:N
     disp(i);
     y = W*X;
     old = W;
     fy = y.^3;
-    dW = (D*N - fy*(y.')) * W/N;
+    dW = (D*C - fy*(y.')) * W/C;
     W = W + learningRate*dW;
     new = W;
     if(converge(old, new, delta))
-        disp('convered');
+        disp('converged');
         break;
     end    
 end

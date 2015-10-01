@@ -1,17 +1,20 @@
 FigHandle = figure('name','lecture 5 - 25','numbertitle','off');
 set(FigHandle, 'Position', [50, 50, 1000, 500]);
+%%
 N = 1000;
-randX = randn(1,N);
-x1 = normrnd(randX,1);
-y1 = normrnd(randX,1);
+x1 = randn(1,N);
+a = -1;
+b = 1;
+r = (b-a).*rand(1,N) + a;
+y1 = (x1+r) ;
+y1 = y1/max(abs(y1(:)));
 
 % plotting input
 subplot(1,2,1);
 scatter(x1,y1);
-
 X = [x1;y1];
 
-% taking PCA 
+%% taking PCA 
 cov_x = cov(X.');
 [U,S,V] = svd(cov_x);
 R = U*X;

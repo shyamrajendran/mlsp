@@ -1,7 +1,5 @@
-function I = l7_36(s,v)
 load('cities.mat');
-
-% in = [1,2,3;4,5,6;7,8,9]
+%%
 in = D;
 [r,c] = size(in);
 for i = 1:r
@@ -27,7 +25,7 @@ for j = 1:c
         in(i,j) = in(i,j)-avg; 
     end
 end
-in
+
 
 [U,S,V] = svd(cov(in));
 % taking only top 3 components 
@@ -36,25 +34,11 @@ Z = U.'*in;
 X1 = Z(1,:);
 Y1 = Z(2,:);
 Z1 = Z(3,:);
-size(Z1)
-FigHandle = figure('name','lecture 5 - 25','numbertitle','off');
+%%
+FigHandle = figure('name','lecture 7 - 26','numbertitle','off');
 set(FigHandle, 'Position', [50, 50, 1000, 400]);
 subplot(1,2,1)
-imagesc(in);colormap gray;
-
-% scatter3(X1,Y1,Z1);
-% figure,
-% labels = rand(18);
+imagesc(in);colormap gray;axis xy;
 subplot(1,2,2)
-plot3(Y1,Z1,X1,'ro');
-% celldata = cellstr(labels)
-% text(X1,Y1,Z1,labels)
-
-
-% size(S)
-% size(U)
-% size(V)
-% 
-% 
-% 
-end
+scatter3(Y1,Z1,X1);
+text(Y1,Z1,X1,cities);

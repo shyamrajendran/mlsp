@@ -53,13 +53,13 @@ N = 500;
 [output,W,H,N] = nmf_helper(X,W,H,N,errorrate);
 figure
 subplot(4,1,1)
-plot(W(:,1))
+plot(W(:,1)),title('Sometimes need to be run due to rand initiation issue. W column 1');
 subplot(4,1,2)
-plot(W(:,2))
+plot(W(:,2)),title('W column 2');
 subplot(4,1,3)
-plot(H(1,:))
+plot(H(1,:)),title('H ROW 1');
 subplot(4,1,4)
-plot(H(2,:))
+plot(H(2,:)),title('H ROW 2');
 
 
 
